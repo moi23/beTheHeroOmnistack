@@ -3,10 +3,10 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Container } from './styles';
 import Logo from '../../assets/logo.svg';
 import SVG_BG from '../../assets/Iogona.gif';
-import { BiArrowFromLeft } from 'react-icons/bi';
+import { BiArrowFromRight } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 
-function Login() {
+function Cadastro() {
   const [data, setData] = useState({});
 
   const formUsername = useRef();
@@ -28,12 +28,19 @@ function Login() {
         <img className="logo" src={Logo} alt="Be The Hero" />
         <form onSubmit={HandleSubmit}>
           <div>
-            <h2>Faça seu logon</h2>
+            <h2>Faça seu cadastro!</h2>
           </div>
           <input
             type="text"
             required={true}
             ref={formUsername}
+            name="username"
+            placeholder="Digite seu nome aqui"
+          />
+          <input
+            type="text"
+            required={true}
+            ref={formPassword}
             name="username"
             placeholder="Digite seu username aqui"
           />
@@ -45,9 +52,9 @@ function Login() {
             placeholder="Digite sua senha aqui"
           />
           <button>Entrar</button>
-          <Link to="/cadastro">
-            Não tenho Cadastro
-            <BiArrowFromLeft size="1.3rem" color="red" id="ArrowLeft" />
+          <Link to="/">
+            <BiArrowFromRight size="1.3rem" color="red" id="ArrowLeft" />
+            Voltar para a tela Inicial
           </Link>
         </form>
       </div>
@@ -58,4 +65,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Cadastro;
